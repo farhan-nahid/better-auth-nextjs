@@ -13,19 +13,27 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PasswordInput } from "@/components/ui/password-input";
+import { useSignIn } from "@/hooks/auth/use-sign-in";
 
 import { DiscordLogoIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { Key, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function SignIn() {
+  const { mutate, isPending } = useSignIn();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
+
+  const login = () => {
+    return mutate({
+      email: email,
+      password: password,
+      rememberMe: rememberMe,
+    });
+  };
+
   return (
     <Card className="z-50 rounded-md rounded-t-none max-w-md">
       <CardHeader>
@@ -79,30 +87,14 @@ export default function SignIn() {
           <Button
             type="submit"
             className="w-full"
-            disabled={loading}
-            onClick={async () => {
-              // await signIn.email(
-              // 	{
-              // 		email: email,
-              // 		password: password,
-              // 		callbackURL: "/dashboard",
-              // 		rememberMe,
-              // 	},
-              // 	{
-              // 		onRequest: () => {
-              // 			setLoading(true);
-              // 		},
-              // 		onResponse: () => {
-              // 			setLoading(false);
-              // 		},
-              // 		onError: (ctx) => {
-              // 			toast.error(ctx.error.message);
-              // 		},
-              // 	},
-              // );
-            }}
+            disabled={isPending}
+            onClick={login}
           >
-            {loading ? <Loader2 size={16} className="animate-spin" /> : "Login"}
+            {isPending ? (
+              <Loader2 size={16} className="animate-spin" />
+            ) : (
+              "Login"
+            )}
           </Button>
           <div className="grid grid-cols-4 gap-2">
             <Button

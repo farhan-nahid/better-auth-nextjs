@@ -1,6 +1,8 @@
 // import { auth } from "@/lib/auth";
 
-export default async function DashboardPage() {
+import { DashboardWrapper } from "./_components/dashboard-wrapper";
+
+export default function DashboardPage() {
   // const [session, activeSessions, deviceSessions, organization] =
   // 	await Promise.all([
   // 		auth.api.getSession({
@@ -21,6 +23,8 @@ export default async function DashboardPage() {
   return (
     <div className="w-full">
       <div className="flex gap-4 flex-col">
+        <DashboardWrapper />
+
         {/* <AccountSwitcher
 					sessions={JSON.parse(JSON.stringify(deviceSessions))}
 				/>
