@@ -19,7 +19,7 @@ importers:
         version: 0.12.0
       '@libsql/kysely-libsql':
         specifier: ^0.4.1
-        version: 0.4.1(kysely@0.27.5)
+        version: 0.4.1(kysely@0.28.14)
       '@prisma/adapter-libsql':
         specifier: ^5.22.0
         version: 5.22.0(@libsql/client@0.12.0)
@@ -162,8 +162,8 @@ importers:
         specifier: ^1.4.1
         version: 1.4.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       kysely:
-        specifier: ^0.27.4
-        version: 0.27.5
+        specifier: ^0.28.14
+        version: 0.28.14
       lucide-react:
         specifier: ^0.439.0
         version: 0.439.0(react@18.3.1)
@@ -2872,9 +2872,9 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  kysely@0.27.5:
-    resolution: {integrity: sha512-s7hZHcQeSNKpzCkHRm8yA+0JPLjncSWnjb+2TIElwS2JAqYr+Kv3Ess+9KFfJS0C1xcQ1i9NkNHpWwCYpHMWsA==}
-    engines: {node: '>=14.0.0'}
+  kysely@0.28.14:
+    resolution: {integrity: sha512-SU3lgh0rPvq7upc6vvdVrCsSMUG1h3ChvHVOY7wJ2fw4C9QEB7X3d5eyYEyULUX7UQtxZJtZXGuT6U2US72UYA==}
+    engines: {node: '>=20.0.0'}
 
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
@@ -4149,10 +4149,10 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@libsql/kysely-libsql@0.4.1(kysely@0.27.5)':
+  '@libsql/kysely-libsql@0.4.1(kysely@0.28.14)':
     dependencies:
       '@libsql/client': 0.8.1
-      kysely: 0.27.5
+      kysely: 0.28.14
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6658,7 +6658,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  kysely@0.27.5: {}
+  kysely@0.28.14: {}
 
   language-subtag-registry@0.3.23: {}
 
